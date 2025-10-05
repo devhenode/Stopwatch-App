@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="stopwatch">
+      <h1 class="stopwatch__status" id="statusLabel">Ready</h1>
+      <div class="stopwatch__display" id="timeDisplay">00:00:00</div>
+      <div class="stopwatch__controls">
+        <button type="button" class="btn" id="startBtn">Start</button>
+        <button type="button" class="btn" id="stopBtn">Stop</button>
+        <button type="button" class="btn" id="resetBtn">Reset</button>
+      </div>
+    </main>
+    <div class="theme-toggle">
+      <button type="button" class="btn" id="themeToggleBtn">Toggle Theme</button>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

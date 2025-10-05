@@ -1,0 +1,113 @@
+*{
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #b51f22;
+  --text-color: #ffffff;
+  --accent: #f7c948;
+  --accent-hover: #ffdd6f;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e; 
+  --text-color: #e0e0e0;
+  --accent: #4caf50; 
+  --accent-hover: #66bb6a;
+  --shadow: rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.stopwatch {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1.5rem 3rem var(--shadow);
+}
+
+.stopwatch__status {
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.stopwatch__display {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: 0.4rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  min-width: 16rem;
+  transition: transform 0.2s ease;
+}
+
+.stopwatch__controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #5a4200;
+  box-shadow: 0 0.75rem 1.5rem var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--accent-hover);
+  transform: translateY(-0.15rem);
+  box-shadow: 0 1.2rem 2rem var(--shadow);
+}
+
+.btn:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 0.5rem 1rem var(--shadow);
+}
+
+#themeToggleBtn {
+    margin-top: -990px;
+}
+
+@media (max-width: 480px) {
+  .stopwatch {
+    width: min(90vw, 22rem);
+    padding: 2rem 1.5rem;
+  }
+
+  .stopwatch__controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
